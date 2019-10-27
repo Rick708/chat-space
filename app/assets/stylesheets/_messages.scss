@@ -10,6 +10,7 @@ h1 {
 	background-color: $blue;
 	text-align: center;
 	color: $white;
+	z-index: 0;
 }
 
 #chat__side {
@@ -161,5 +162,3 @@ h1 {
 .file-form{
 	display: none;
 }
-
-// %input{type="file",value="&#xf03e" class="fa"}
