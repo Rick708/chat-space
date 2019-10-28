@@ -9,11 +9,7 @@
       = fa_icon 'edit' 
       = fa_icon 'cog'  
   .chat__side__group
-    .chat__side__group__name テストネーム
-    .chat__side__group__text テスト投稿
-  .chat__side__group
-    .chat__side__group__name テストネーム２
-    .chat__side__group__text テスト投稿２
+  =render "group"
 
 
 #main
@@ -24,13 +20,7 @@
     %a{class: "main__header__edit-blue"}Edit
 
   .main__body
-    .main__body__member グループネーム
-    .main__body__date 1989/10/27
-    .main__body__comment 誕生日
-    .main__body2
-      .main__body__member グループネーム2
-      .main__body__date 1989/10/272
-      .main__body__comment 誕生日2
+  =render "body"
 
   .bottom__form
     .bottom__form__icon 
