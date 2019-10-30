@@ -21,7 +21,7 @@ h1 {
 	.chat__side__var {
 		background-color: $sidetop;
 		height: 100px;
-		.chat__side__var__user {
+		&__user {
 				font-size: 16px;
 				font-weight: bold;
 				color: $white;
@@ -29,7 +29,7 @@ h1 {
 				padding-top: 42px;
 				float: left;
     }
-    .chat__side__var__menu {
+    &__menu {
       color:$white;
 			float: right;
 			padding-top: 42px;
@@ -42,12 +42,12 @@ h1 {
 .chat__side__group {
 	@include haba;
 	margin-top: 20px;
-	.chat__side__group__name {
+	&__name {
 		font-size: 15px;
 		color: $white;
 		font-weight: bold;
   }
-    .chat__side__group__text {
+	&__text {
     	font-size: 11px;
     	color: $white;
     	margin-top: 5px;
@@ -69,22 +69,22 @@ h1 {
 		float: left;
 		width: 100%;
 		background-color: $white;
-		.main__header__group {
+		&__group {
 			float: left;
 		}
-		.main__header__group__name {
+		&__group__name {
 			padding-top: 35px;
 			font-size: 20px;
 			color: #333333;
 			padding-left: 40px;
 		}
-		.main__header__member {
+		&__member {
 			margin-top: 15px;
 			font-size: 12px;
 			color: #999999;
 			padding-left: 40px;
 		}
-		.main__header__edit-blue {
+		&__edit-blue {
 			text-decoration: none;
 			margin-right: 40px;
 			padding: 0px 20px;
@@ -102,7 +102,7 @@ h1 {
 		clear: both;
 		width:100%;
 		position: relative;
-		.main__body__member{
+		&__member{
 			padding-top: 46px;
 			padding-left: 40px;
 			float: left;
@@ -110,16 +110,14 @@ h1 {
 			font-weight: bold;
 			color: black;
 		}
-
-		.main__body__date{
+		&__date{
 			padding-left: 10px;
 			float: left;
 			padding-top: 46px;
 			font-size: 12px;
 			color: #999999;
 		}
-
-		.main__body__comment{
+		&__comment{
 			padding-top: 10px;
 			font-size: 14px;
 			color: #434A54;
@@ -133,15 +131,15 @@ h1 {
 		background-color: rgb(171, 168, 168);
 		height: 80px;
 		padding-top: 20px;
-		bottom: 0px;
+		bottom: 30px;
 		position: absolute;
-			.bottom__form__text{
+		&__text{
 				width: calc(100vw - 510px);
 				padding-left: 10px;
 				height: 50px;
 				margin-left: 40px;
 			}
-	    .bottom__form__text__submit {
+	    &__text__submit {
 				width: 100px;
 				background-color: $blue;
 				color: $white;
