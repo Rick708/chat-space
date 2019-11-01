@@ -6,11 +6,13 @@ body {
 	height: 100%;
 }
 
-h1 {
+.head{
 	background-color: $blue;
 	text-align: center;
 	color: $white;
-	z-index: 0;
+	z-index: 1;
+	position: absolute;
+	width: 100%;
 }
 
 #chat__side {
@@ -30,13 +32,17 @@ h1 {
 				float: left;
     }
     &__menu {
-      color:$white;
 			float: right;
 			padding-top: 42px;
 			margin-right: 20px;
     }
   }
 }
+
+.icon{
+	color: $white;
+}
+
 
 
 .chat__side__group {
@@ -131,7 +137,7 @@ h1 {
 		background-color: rgb(171, 168, 168);
 		height: 80px;
 		padding-top: 20px;
-		bottom: 30px;
+		bottom: 0px;
 		position: absolute;
 		&__text{
 				width: calc(100vw - 510px);
