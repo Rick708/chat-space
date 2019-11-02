@@ -1,165 +1,168 @@
-html {
-	  height: 100%;
+html {
+	height: 100%;
+}
+
+body {
+	height: 100%;
+}
+
+.head{
+	background-color: $blue;
+	text-align: center;
+	color: $white;
+	z-index: 1;
+	position: absolute;
+	width: 100%;
+}
+
+#chat__side {
+	background-color: $side;
+	width: 300px;
+	height: 100%;
+	float: left;
+	.chat__side__var {
+		background-color: $sidetop;
+		height: 100px;
+		&__user {
+				font-size: 16px;
+				font-weight: bold;
+				color: $white;
+				margin-left: 20px;
+				padding-top: 42px;
+				float: left;
+    }
+    &__menu {
+			float: right;
+			padding-top: 42px;
+			margin-right: 20px;
+    }
+  }
+}
+
+.icon{
+	color: $white;
+}
+
+
+
+.chat__side__group {
+	@include haba;
+	margin-top: 20px;
+	&__name {
+		font-size: 15px;
+		color: $white;
+		font-weight: bold;
+  }
+	&__text {
+    	font-size: 11px;
+    	color: $white;
+    	margin-top: 5px;
+			margin-bottom: 40px;
+			font-weight: bold;
+  }
+
+}
+
+
+#main {
+	float: left;
+	position: relative;
+	height: 100%;
+	width: calc(100vw - 300px);
+	background-color: $whitegray;
+	.main__header {
+		border-bottom: #eeeeee;
+		float: left;
+		width: 100%;
+		background-color: $white;
+		&__group {
+			float: left;
+		}
+		&__group__name {
+			padding-top: 35px;
+			font-size: 20px;
+			color: #333333;
+			padding-left: 40px;
+		}
+		&__member {
+			margin-top: 15px;
+			font-size: 12px;
+			color: #999999;
+			padding-left: 40px;
+		}
+		&__edit-blue {
+			text-decoration: none;
+			margin-right: 40px;
+			padding: 0px 20px;
+			height: 40px;
+			line-height: 40px;
+			border: solid 1px $blue;
+			color: $blue;
+			margin-top: 28px;
+			float:right;
+		}
 	}
-	
-	body {
-	  height: 100%;
+
+	.main__body {
+		float: right;
+		clear: both;
+		width:100%;
+		position: relative;
+		&__member{
+			padding-top: 46px;
+			padding-left: 40px;
+			float: left;
+			font-size: 16px;
+			font-weight: bold;
+			color: black;
+		}
+		&__date{
+			padding-left: 10px;
+			float: left;
+			padding-top: 46px;
+			font-size: 12px;
+			color: #999999;
+		}
+		&__comment{
+			padding-top: 10px;
+			font-size: 14px;
+			color: #434A54;
+			clear: both;
+			padding-left: 40px;
+		}
 	}
-	
-	h1 {
-	  background-color: $blue;
-	  text-align: center;
-	  color: $white;
-	  z-index: 0;
+
+	.bottom__form {
+		clear: both;
+		background-color: rgb(171, 168, 168);
+		height: 80px;
+		padding-top: 20px;
+		bottom: 0px;
+		position: absolute;
+		&__text{
+				width: calc(100vw - 510px);
+				padding-left: 10px;
+				height: 50px;
+				margin-left: 40px;
+			}
+	    &__text__submit {
+				width: 100px;
+				background-color: $blue;
+				color: $white;
+				font-size: 20px;
+				height: 50px;
+				margin-right: 40px;
+				margin-left: 12px;
+			}
+			i{
+				position: absolute;
+				top: 35px;
+				right: 160px;
+				font-size:  25px;
+		}
 	}
-	
-	#chat__side {
-	  background-color: $side;
-	  width: 300px;
-	  height: 100%;
-	  float: left;
-	  .chat__side__var {
-	    background-color: $sidetop;
-	    height: 100px;
-	    &__user {
-	        font-size: 16px;
-	        font-weight: bold;
-	        color: $white;
-	        margin-left: 20px;
-	        padding-top: 42px;
-	        float: left;
-	    }
-	    &__menu {
-	      color:$white;
-	      float: right;
-	      padding-top: 42px;
-	      margin-right: 20px;
-	    }
-	  }
-	}
-	
-	
-	.chat__side__group {
-	  @include haba;
-	  margin-top: 20px;
-	  &__name {
-	    font-size: 15px;
-	    color: $white;
-	    font-weight: bold;
-	  }
-	  &__text {
-	      font-size: 11px;
-	      color: $white;
-	      margin-top: 5px;
-	      margin-bottom: 40px;
-	      font-weight: bold;
-	  }
-	
-	}
-	
-	
-	#main {
-	  float: left;
-	  position: relative;
-	  height: 100%;
-	  width: calc(100vw - 300px);
-	  background-color: $whitegray;
-	  .main__header {
-	    border-bottom: #eeeeee;
-	    float: left;
-	    width: 100%;
-	    background-color: $white;
-	    &__group {
-	      float: left;
-	    }
-	    &__group__name {
-	      padding-top: 35px;
-	      font-size: 20px;
-	      color: #333333;
-	      padding-left: 40px;
-	    }
-	    &__member {
-	      margin-top: 15px;
-	      font-size: 12px;
-	      color: #999999;
-	      padding-left: 40px;
-	    }
-	    &__edit-blue {
-	      text-decoration: none;
-	      margin-right: 40px;
-	      padding: 0px 20px;
-	      height: 40px;
-	      line-height: 40px;
-	      border: solid 1px $blue;
-	      color: $blue;
-	      margin-top: 28px;
-	      float:right;
-	    }
-	  }
-	
-	  .main__body {
-	    float: right;
-	    clear: both;
-	    width:100%;
-	    position: relative;
-	    &__member{
-	      padding-top: 46px;
-	      padding-left: 40px;
-	      float: left;
-	      font-size: 16px;
-	      font-weight: bold;
-	      color: black;
-	    }
-	
-	    &__date{
-	      padding-left: 10px;
-	      float: left;
-	      padding-top: 46px;
-	      font-size: 12px;
-	      color: #999999;
-	    }
-	
-	    &__comment{
-	      padding-top: 10px;
-	      font-size: 14px;
-	      color: #434A54;
-	      clear: both;
-	      padding-left: 40px;
-	    }
-	  }
-	
-	  .bottom__form {
-	    clear: both;
-	    background-color: rgb(171, 168, 168);
-	    height: 80px;
-	    padding-top: 20px;
-	    bottom: 0px;
-	    position: absolute;
-	    &__text{
-	        width: calc(100vw - 510px);
-	        padding-left: 10px;
-	        height: 50px;
-	        margin-left: 40px;
-	      }
-	      &__text__submit {
-	        width: 100px;
-	        background-color: $blue;
-	        color: $white;
-	        font-size: 20px;
-	        height: 50px;
-	        margin-right: 40px;
-	        margin-left: 12px;
-	      }
-	      i{
-	        position: absolute;
-	        top: 35px;
-	        right: 160px;
-	        font-size:  25px;
-	    }
-	  }
-	}
-	
-	.file-form{
-	  display: none;
-	}
-	
+}
+
+.file-form{
+	display: none;
+}
