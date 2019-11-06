@@ -71,3 +71,6 @@ group :production do
      gem 'unicorn'
 end
 gem "font-awesome-rails"
+
+gem 'carrierwave'
+gem 'mini_magick'
