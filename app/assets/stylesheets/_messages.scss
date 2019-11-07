@@ -75,20 +75,21 @@ body {
 		float: left;
 		width: 100%;
 		background-color: $white;
-		&__group {
-			float: left;
-		}
+		height: 100px;
 		&__group__name {
 			padding-top: 35px;
 			font-size: 20px;
 			color: #333333;
 			padding-left: 40px;
+			float: left;
 		}
 		&__member {
-			margin-top: 15px;
+			position: absolute;
+			margin-top: 75px;
 			font-size: 12px;
 			color: #999999;
 			padding-left: 40px;
+
 		}
 		&__edit-blue {
 			text-decoration: none;
@@ -103,34 +104,35 @@ body {
 		}
 	}
 
-	.main__body {
-		float: right;
-		clear: both;
-		width:100%;
-		position: relative;
-		&__member{
-			padding-top: 46px;
-			padding-left: 40px;
-			float: left;
-			font-size: 16px;
-			font-weight: bold;
-			color: black;
-		}
-		&__date{
-			padding-left: 10px;
-			float: left;
-			padding-top: 46px;
-			font-size: 12px;
-			color: #999999;
-		}
-		&__comment{
-			padding-top: 10px;
-			font-size: 14px;
-			color: #434A54;
-			clear: both;
-			padding-left: 40px;
-		}
+.main__body {
+	float: right;
+	clear: both;
+	width:100%;
+	position: relative;
+	&__member{
+		padding-top: 46px;
+		padding-left: 40px;
+		float: left;
+		font-size: 16px;
+		font-weight: bold;
+		color: black;
 	}
+	&__date{
+		padding-left: 10px;
+		float: left;
+		padding-top: 46px;
+		font-size: 12px;
+		color: #999999;
+	}
+	&__comment{
+		padding-top: 10px;
+		font-size: 14px;
+		color: #434A54;
+		clear: both;
+		padding-left: 40px;
+	}
+}
+
 
 	.bottom__form {
 		clear: both;
@@ -139,6 +141,7 @@ body {
 		padding-top: 20px;
 		bottom: 0px;
 		position: absolute;
+		width: 100%;
 		&__text{
 				width: calc(100vw - 510px);
 				padding-left: 10px;
@@ -159,10 +162,34 @@ body {
 				top: 35px;
 				right: 160px;
 				font-size:  25px;
+				z-index: 1;
+				color: black;
 		}
 	}
 }
 
-.file-form{
+.hidden{
 	display: none;
+}
+.form__message{
+	width: calc(100vw - 510px);
+	padding-left: 10px;
+	height: 50px;
+	margin-left: 40px;
+	float: left;
+}
+
+.text__submit{
+	width: 100px;
+	background-color: $blue;
+	color: $white;
+	font-size: 20px;
+	height: 50px;
+	margin-right: 40px;
+	margin-left: 12px;
+	float: right;
+}
+
+.icon{
+	z-index: 1;
 }
