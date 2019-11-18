@@ -10,13 +10,13 @@
   .chat__side__group
   =render "group"
 
-#main
-  .main__header
-    = render "main"
+.main__header
+  = render "main"
 
+#main
   .main__body
     = render @messages
 
   .bottom__form
-  =render "bottom"
+    =render "bottom"
 
