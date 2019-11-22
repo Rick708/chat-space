@@ -1,19 +1,21 @@
 $(function(){
-  function buildmessage(message){
+  function buildHTML(message){
     var image_url = (message.image_url)? `<image class="lower-message_image" src="${message.image_url}">`:"";
-    var html = `<div class="main__body__frame">
-                <div class="main__body__frame__member">
-                ${message.name}
-                </div>
-                <div class="main__body__frame__date">
-                ${message.date}
-                </div>
-                <div class="main__body__frame__comment">
-                <p class="lower-message__content">
-                ${message.content}
-                </p>
-                ${image_url}
-              </div>
+    var html = `<div class="message" data-message-id="${message.id}">
+                <div class="main__body__frame">
+                  <div class="main__body__frame__member">
+                  ${message.name}
+                  </div>
+                  <div class="main__body__frame__date">
+                  ${message.date}
+                  </div>
+                  </div>
+                  <div class="main__body__frame__comment">
+                  <p class="lower-message__content">
+                  ${message.content}
+                  </p>
+                  ${image_url}
+                  </div>
                 </div>`
     return html;
   }
@@ -31,7 +33,7 @@ $(function(){
       contentType: false
     })
     .done(function(messages){
-      var html = buildmessage(messages);
+      var html = buildHTML(messages);
       $('.main__body').append(html)
       $('#new_message')[0].reset();
       $('.text__submit').prop('disabled', false);
@@ -41,5 +43,44 @@ $(function(){
     .fail(function(message) {
       alert("メッセージ送信に失敗しました");
   });
-  })
-})
+  });
+
+  //自動更新
+    var reloadMessages = function() {
+      if (window.location.href.match(/\/groups\/\d+\/messages/)){
+        var last_message_id = $('.message:last').data('messageId')
+      $.ajax({
+        url: "api/messages",
+        //ルートで見る。メッセージのインデックスのパスを入力
+        type: 'GET',
+        //ルートで見る。メッセージインデックスのPATCHを入力
+        dataType: 'json',
+        //jsonで送っているのでデータタイプはjson
+        data: {id: last_message_id}
+        //上記で定義したlast_message_idをidとして使えるように定義
+      })
+
+      .done(function(messages){
+        // console.log(messages);
+        let insertHTML = '';
+        //追加するHTMLの入れ物を作る
+        messages.forEach(function(message){
+        //配列messagesの中身一つ一つを取り出し、HTMLに変換したものを入れ物に足し合わせる
+        insertHTML = buildHTML(message);
+        console.log(insertHTML);
+        //メッセージが入ったHTMLを取得
+        $('.main__body').append(insertHTML);
+        // console.log($('.main__body__frame'));
+        //メッセージを追加
+        $('#main').animate({scrollTop: $('#main')[0].scrollHeight}, 'fast'); 
+        //一番下にスクロール
+      })
+     })
+     .fail(function() {
+      console.log('error');
+     });
+    };
+  }
+  setInterval(reloadMessages, 7000);
+  //7秒毎に自動更新する
+});
