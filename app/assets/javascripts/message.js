@@ -61,23 +61,20 @@ $(function(){
       })
 
       .done(function(messages){
-        // console.log(messages);
         let insertHTML = '';
         //追加するHTMLの入れ物を作る
         messages.forEach(function(message){
         //配列messagesの中身一つ一つを取り出し、HTMLに変換したものを入れ物に足し合わせる
         insertHTML = buildHTML(message);
-        console.log(insertHTML);
         //メッセージが入ったHTMLを取得
         $('.main__body').append(insertHTML);
-        // console.log($('.main__body__frame'));
         //メッセージを追加
         $('#main').animate({scrollTop: $('#main')[0].scrollHeight}, 'fast'); 
         //一番下にスクロール
       })
      })
      .fail(function() {
-      console.log('error');
+      alert('error');
      });
     };
   }
