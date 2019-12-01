@@ -34,7 +34,6 @@ $(function(){
     })
     .done(function(messages){
       var html = buildHTML(messages);
-      console.log(messages)
       $('.main__body').append(html)
       $('#new_message')[0].reset();
       $('.text__submit').prop('disabled', false);
