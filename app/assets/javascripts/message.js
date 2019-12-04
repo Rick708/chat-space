@@ -78,6 +78,6 @@ $(function(){
      });
     };
   }
-  setInterval(reloadMessages, 7000);
-  //7秒毎に自動更新する
+  setInterval(reloadMessages, 10000);
+  //10秒毎に自動更新する
 });
