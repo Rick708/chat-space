@@ -100,15 +100,15 @@ body {
 	float: left;
 	width: calc(100vw - 300px);
 	background-color: $whitegray;
-	overflow: auto;
+	overflow: scroll;
 	height: 75%;
 	margin-top: 100px;
+	padding-bottom: 100px;
 .main__body {
 	float: right;
 	clear: both;
 	width:100%;
 	position: relative;
-	padding-bottom: 40px;
 	&__frame{
 		&__member{
 			padding-top: 46px;
