@@ -100,10 +100,10 @@ body {
 	float: left;
 	width: calc(100vw - 300px);
 	background-color: $whitegray;
-	overflow: scroll;
 	height: 75%;
 	margin-top: 100px;
 	padding-bottom: 100px;
+	overflow: scroll;
 .main__body {
 	float: right;
 	clear: both;
